@@ -9,10 +9,12 @@ for file in os.listdir(os.curdir):
         print(file)
         merger.append(file)
 
-file_name = "merged.pdf"
-print("Please enter new file name for merged PDFs. Press enter to skip and use default file name.")
-if (input() != ''):
-    file_name = f"{input()}.pdf"
+file_name = input("Please enter a new file name for the merged PDFs. Press enter to skip and use default file name.\n")
+if (file_name == ''):
+    # Use default file name for merged PDFs if no input
+    file_name = 'merged.pdf'
+else:
+    file_name += '.pdf'
 
 merger.write(file_name)
 print(f"PDF files successfully merged! See file: {file_name}")
