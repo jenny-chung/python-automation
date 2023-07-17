@@ -111,5 +111,6 @@ if __name__ == '__main__':
 
 # ! Fill in the path to the folder you want to upload files from (from your local computer)
     directory_path = input('Please specify the path to the folder you want to upload files from: ')
-    folder_id = input('Please specify the id of the Google Drive folder you want to upload to: ')
+    folder_url = input('Please specify the Google Drive folder URL you want to upload to: ')
+    folder_id = folder_url.rsplit('/', 1)[-1]
     upload_files(directory_path, folder_id, creds)
